@@ -1,20 +1,25 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
-import { FooterComponent } from './footer/footer.component';
+
+import { ScmMainModule } from './scm-main/scm-main.module';
+import { CategoryModule } from './category/category.module';
+import { ProductModule } from './product/product.module';
+
 
 @NgModule({
   declarations: [
-    AppComponent,
-    NavbarComponent,
-    SidebarComponent,
-    FooterComponent
+    AppComponent
   ],
   imports: [
-    BrowserModule
+    /* Angular Modules */
+    BrowserModule, FormsModule, HttpModule,
+
+    /* App Modules */
+    ProductModule, CategoryModule, ScmMainModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-
-export declare type SidebarMenu = 'not_selected' | 'product' | 'category';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'scm-sidebar',
@@ -8,17 +6,8 @@ export declare type SidebarMenu = 'not_selected' | 'product' | 'category';
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
-  currentMenu: SidebarMenu;
-  @Output() changedMenu: EventEmitter<string> = new EventEmitter();
-
   constructor() { }
 
   ngOnInit() {
   }
-
-  clickedMenu(menu: SidebarMenu) {
-    this.currentMenu = menu;
-    this.changedMenu.emit(menu);
-  }
-
 }
